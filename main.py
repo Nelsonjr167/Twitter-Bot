@@ -4,21 +4,19 @@ import tweepy
 import schedule
 import time
 import random
-
 from dotenv import load_dotenv
 
 # Load environment variables from keys.env file
-load_dotenv(r"C:\Users\aguin\OneDrive\Documents\Projects\twitter_bot\Keys\keys.env")
+load_dotenv()
 
 # Twitter API credentials
+openai.api_key = os.getenv("OPENAI_API_KEY")
 api_key = os.getenv("API_KEY")
 api_secret = os.getenv("API_SECRET")
 bearer_token = os.getenv("BEARER_TOKEN")
 access_token = os.getenv("ACCESS_TOKEN")
 access_token_secret = os.getenv("ACCESS_TOKEN_SECRET")
 
-# OpenAI API key
-openai.api_key ="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"
 
 # Initialize Twitter API client for v2
 client = tweepy.Client(
